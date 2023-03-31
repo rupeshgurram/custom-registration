@@ -1,0 +1,66 @@
+<?php
+use Drupal\Core\Database\Database;
+ 
+/**
+ * Implements hook_schema().
+ */
+function custom_registration_schema(){
+    $schema['registration'] = array(
+        'description' => 'The table for storing the registration data.',
+        'fields' => array(
+            'id' => array(
+                'description' => 'The primary identifier for registration form in database',
+                'type' => 'serial',
+                'not null' => TRUE,
+                'unsigned' => TRUE,
+            ),
+            'fname' => array(
+                'description' => 'first name',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+           'lname' => array(
+                'description' => 'last name.',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'email' => array(
+                'description' => 'email',
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => TRUE,
+               
+            ),
+            'phone' => array(
+                'description' => 'phone number',
+                'type' => 'int',
+                'length' => 100,
+                'not null' => TRUE,
+            ),
+			'company' => array(
+                'description' => 'company name',
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => TRUE,
+            ),
+			'address' => array(
+                'description' => 'Address',
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => TRUE,
+            ),
+			'Contact' => array(
+                'description' => 'Contact message',
+                'type' => 'int',
+                'length' => 100,
+                'not null' => TRUE,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

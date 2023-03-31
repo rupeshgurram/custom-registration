@@ -1,0 +1,7 @@
+custom_registration.registration:
+  path: '/registration/add'
+  defaults:
+    _title: 'registration from'
+    _form: '\Drupal\custom_registration\Form\registrationForm'
+  requirements:
+    _access: 'TRUE'
